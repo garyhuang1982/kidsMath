@@ -1,8 +1,12 @@
 //预设值
 var questions = [];//空数组,用来放对象,也就是各道题目
-var totalQuestions = 1;//题目数量
+var totalQuestions = "";//题目数量.修改为通过cookie进行存储
 var miniNumber = 1;//将零修改为一,减少无意义题目
-var maxNumber = 5;//题目范围
+var maxNumber = "";//题目范围.修改为通过cookie进行存储
+
+//读取cookie
+totalQuestions = Cookies.get('totalQ');
+maxNumber = Cookies.get('maxN');
 
 //初始化自定义工具函数getRandomInRange(),用于求随机数,随机数是闭区间[min, max],包括最大值max和最小值min
 function getRandomInRange (min, max) {
@@ -74,6 +78,9 @@ var app = new Vue({
 						makeQuestion(maxNumber);
 						questions.push({ bitA: x, operator: o, bitB: y, result: z, answer: "" });
 					}
+					//存储totalQuestions, maxNumber至cookie,有效期7天
+					Cookies.set('totalQ', totalQuestions, { expires: 7 });
+					Cookies.set('maxN', maxNumber, { expires: 7 });
 				}
 			}
 });
