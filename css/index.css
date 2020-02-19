@@ -1,0 +1,67 @@
+body{
+	font-size: 25px;
+	background-color: white;
+}
+
+#app{
+	text-align: center;
+	background-color: white;
+	border-radius: 5%;
+	width: 90%;
+	height: 95%;
+	margin-top: 5%;
+	margin-left: 5%;
+	padding-top: 5%;
+	box-shadow: 5px 5px 5px 5px lightgrey inset;
+}
+
+li{
+	list-style-type: none;
+	line-height: 2em;
+	font-size: 2em;
+	letter-spacing: 0.3em;
+}
+
+form{
+	margin-top: 20px;
+	background-color: lightgrey;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+input{	
+	font-size: 1em;	
+	margin-left: 2px;
+	margin-bottom: 2px;
+	text-align: center;
+	vertical-align: middle;
+	width: 2em;
+	height: 2em;
+}
+
+input[type=button]{
+	width: 4em;
+	margin-left: 50px;
+}
+
+input.answer{
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: medium inset black;
+	width: 1.2em;
+	height: 1.2em;
+}
+
+.fi-x{
+	font-size:1.5em;
+	color:white;
+	vertical-align: middle;
+}
+
+.fi-check{
+	font-size:1.35em;
+	color:green;
+	display: none;
+	vertical-align: middle;
+}
