@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="http://static.runoob.com/assets/foundation-icons/foundation-icons.css">
+		<link rel="stylesheet" href="css/index.css">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			<!--按值、索引的次序，或者对象、索引的次序-->
+			<li v-for="(equation, index) in equations">
+				{{equation.bitA}}{{equation.operator}}{{equation.bitB}}=
+				<input type="number" pattern="\d*"/ class="answer" v-model.trim="equation.answer" v-on:input="checkAnswer(index)">
+				<i class="fi-x"></i>
+				<i class="fi-check"></i>
+			</li>
+			<form>		
+				<span>题目范围<input type="number" pattern="\d*"/ v-model.trim="maxNumber"></span>
+				<span>题目数量<input type="number" pattern="\d*"/ v-model.trim="totalQuestions"></span>
+				<span><input type="button" value="刷题" v-on:click="reloadOnDemand (maxNumber, totalQuestions)"></span>				
+			</form>
+		</div>
+		
+		<script src="js/index.js"></script>		
+	</body>
+</html>
